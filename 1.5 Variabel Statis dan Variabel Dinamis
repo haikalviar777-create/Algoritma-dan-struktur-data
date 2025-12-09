@@ -1,0 +1,13 @@
+#include <stdio.h>
+
+void counter() {
+    static int x = 0; // tidak reset setiap pemanggilan
+    x++;
+    printf("Counter: %d\n", x);
+}
+
+int main() {
+    counter();
+    counter();
+    counter();
+}
