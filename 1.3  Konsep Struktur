@@ -1,0 +1,39 @@
+from dataclasses import dataclass
+
+@dataclass
+class Address:
+    jalan: str
+    kota: str
+    kode_pos: int
+
+@dataclass
+class Mahasiswa:
+    nama: str
+    umur: int
+    ipk: float
+    nilai: list
+    alamat: Address
+
+def print_mahasiswa(m):
+    print(f"Nama   : {m.nama}")
+    print(f"Umur   : {m.umur}")
+    print(f"IPK    : {m.ipk}")
+    print(f"Nilai  : {m.nilai}")
+    print(f"Alamat : {m.alamat.jalan}, {m.alamat.kota} ({m.alamat.kode_pos})")
+    print("-" * 40)
+
+# Contoh penggunaan
+mahasiswa1 = Mahasiswa(
+    nama="Aisyah",
+    umur=20,
+    ipk=3.45,
+    nilai=[80, 85, 90],
+    alamat=Address("Jl. Merdeka 10", "Makassar", 90111)
+)
+
+print_mahasiswa(mahasiswa1)
+
+# Update nilai (mirip pointer update di C)
+mahasiswa1.ipk = 3.70
+print("Sesudah update IPK:")
+print_mahasiswa(mahasiswa1)
