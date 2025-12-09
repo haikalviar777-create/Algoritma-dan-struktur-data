@@ -1,0 +1,13 @@
+#haikal viar
+#D0425306
+
+# Character (berupa string dengan 1 karakter huruf)
+inisial = 'I'
+
+# Integer
+umur = 19          # tipe data bilangan bulat
+
+# Floating point
+tinggi = 163     # tipe data pecahan/desimal
+
+print(umur, tinggi, inisial)
