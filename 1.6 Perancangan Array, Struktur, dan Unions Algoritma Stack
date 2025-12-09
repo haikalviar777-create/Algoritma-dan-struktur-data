@@ -1,0 +1,12 @@
+#include <stdio.h>
+
+struct Mahasiswa {
+    char nama[20];
+    int nilai[3];
+};
+
+int main() {
+    struct Mahasiswa m = {"Budi", {80, 85, 90}};
+    printf("Nama: %s\nNilai: %d %d %d\n",
+           m.nama, m.nilai[0], m.nilai[1], m.nilai[2]);
+}
