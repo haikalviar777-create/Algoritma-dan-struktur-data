@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <string.h>
+
+// Membuat union
+union Data {
+    int i;
+    float f;
+    char text[20];
+};
+
+int main() {
+    union Data data;
+
+    // 1. Mengisi integer
+    data.i = 10;
+    printf("Mengisi data.i = 10\n");
+    printf("data.i   : %d\n", data.i);
+
+    // 2. Mengisi float (mengganti isi integer)
+    data.f = 3.14;
+    printf("\nMengisi data.f = 3.14\n");
+    printf("data.f   : %.2f\n", data.f);
+    printf("data.i   (terganggu): %d\n", data.i);
+
+    // 3. Mengisi string (mengganti data sebelumnya)
+    strcpy(data.text, "Hello");
+    printf("\nMengisi data.text = \"Hello\"\n");
+    printf("data.text: %s\n", data.text);
+    printf("data.i   (terganggu): %d\n", data.i);
+    printf("data.f   (terganggu): %.2f\n", data.f);
+
+    return 0;
+}
